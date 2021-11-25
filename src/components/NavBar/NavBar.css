@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+
+img {
+  height: 50px;
+  width: 50px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  background: white;
+}
+
+.container-logo {
+  width: 150px;
+  padding-left: 2px;
+  display: flex;
+  align-items: baseline;
+}
+
+.container-logo img {
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 15px;
+}
+
+.brand {
+  font-family: "Cookie", Times, serif;
+  font-weight: 400;
+  color: black;
+  font-size: 40px;
+  padding-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#buttonNav {
+  color: red !important;
+}
