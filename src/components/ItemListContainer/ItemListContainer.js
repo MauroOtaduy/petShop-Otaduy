@@ -1,16 +1,18 @@
 import Item from '../Item/Item';
 import './ItemListContainer.css';
 
+
 const ItemListContainer = () => {
+
     const products = [
         {
-            name: 'Pantalon 1',
+            name: 'Comida Gato',
             price: 2000,
             stock: 10,
 
         },
         {
-            name: 'Pantalon 2',
+            name: 'Comida Perro',
             price: 2300,
             stock: 5,
 
@@ -24,7 +26,8 @@ const ItemListContainer = () => {
                 {products.map((product) => {
                     return (
                         <div className='item-position'>
-                            <Item name={product.name} price={product.price} stock={product.stock} />
+                            <Item name={product.name} price={product.price} stock={product.stock} initial={0} />
+
                         </div>
                     )
                 })}

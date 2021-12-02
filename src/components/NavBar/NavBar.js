@@ -4,7 +4,7 @@ import AppBar from '@mui/material/AppBar';
 import { Button } from "@mui/material";
 import logo from '../../../src/assets/images/pets.svg';
 import CartWidget from '../CartWidgets/CartWidget';
-import Grid from '@mui/material/AppBar';
+
 
 export default function NavBar() {
 
