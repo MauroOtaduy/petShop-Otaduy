@@ -1,15 +1,23 @@
 import './Item.css';
 import ItemCount from '../ItemCount/ItemCount'
 
-const Item = ({ name, price, stock, initial }) => {
 
+const Item = ({ data }) => {
+    const { name, price, stock, img, initial } = data
     return (
-        <div >
-            <p>Name : {name}</p>
-            <p>Price : {price}</p>
-            <p>Stock : {stock}</p>
+        <div className='list'>
+            <div className='item' >
+
+                <img src={img} alt='foto producto' />
+                <h2>{name}</h2>
+                <h3>Precio: ${price}</h3>
+
+                <p>Stock: {stock}</p>
+
+            </div>
             <ItemCount stock={stock} initial={initial} />
-        </div>
+
+        </div >
     )
 }
 export default Item;

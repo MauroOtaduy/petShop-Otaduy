@@ -33,11 +33,11 @@ const ItemCount = ({ stock, initial, oNAdd }) => {
     return (
         <div className='itemCount-container'>
             <div className='itemCount-change'>
-                <button className='button-itemCount' onClick={updateItem}>+</button>
+                <button className='button-itemCount text-count' onClick={removeItem}> <p >-</p> </button>
                 <h2 id='item-count'>{itemCount}</h2>
-                <button className='button-itemCount' onClick={removeItem}>-</button>
+                <button className='button-itemCount text-count' onClick={updateItem}> <p>+</p></button>
             </div>
-            <button className='button-itemCount' onClick={onAdd}>Agregar al carrito</button>
+            <button className='button-itemCount' onClick={onAdd}> <p >Agregar al carrito </p> </button>
 
         </div>
     )
