@@ -1,18 +1,33 @@
 import './Item.css';
 import ItemCount from '../ItemCount/ItemCount'
+import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 const Item = ({ data }) => {
-    const { name, price, stock, img, initial } = data
+    const { name, price, stock, img, initial, id } = data
     return (
         <div className='list'>
             <div className='item' >
-
-                <img src={img} alt='foto producto' />
+                <Link to={`/product/${id}`}>
+                    <img src={img} alt='foto producto' />
+                </Link>
                 <h2>{name}</h2>
                 <h3>Precio: ${price}</h3>
 
                 <p>Stock: {stock}</p>
+
+
+                <Button variant="contained">
+                    <Link to={`/product/${id}`}>
+
+                        Detalles
+
+
+                    </Link>
+
+                </Button>
+
 
             </div>
             <ItemCount stock={stock} initial={initial} />

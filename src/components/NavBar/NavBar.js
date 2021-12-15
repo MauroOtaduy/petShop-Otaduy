@@ -4,7 +4,7 @@ import AppBar from '@mui/material/AppBar';
 import { Button } from "@mui/material";
 import logo from '../../../src/assets/images/pets.svg';
 import CartWidget from '../CartWidgets/CartWidget';
-
+import { Link } from 'react-router-dom';
 
 export default function NavBar() {
 
@@ -18,10 +18,18 @@ export default function NavBar() {
                 </div>
                 <div className="cart-container">
                     <ul>
-                        <li><Button variant="contained">Home</Button></li>
-                        <li><Button variant="contained">Products</Button></li>
-                        <li><Button variant="contained">Contact</Button></li>
-                        <li><Button variant="contained">About</Button></li>
+                        <li>
+                            <Button variant="contained">Home</Button>
+                        </li>
+                        <li>
+                            <Button variant="contained">Products</Button>
+                        </li>
+                        <li>
+                            <Button variant="contained">Contact</Button>
+                        </li>
+                        <li>
+                            <Button variant="contained">About</Button>
+                        </li>
                     </ul>
                     <CartWidget />
                 </div>
