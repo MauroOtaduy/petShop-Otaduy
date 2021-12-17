@@ -74,12 +74,15 @@ const ItemDetailContainer = () => {
 
     })
     return (
+        <div className='itemDetail-container'>
+            <h2>Detalles del producto</h2>
+            <div className='detail-container'>
 
-        <div>
-            {
-                loader ? <CircularProgress /> :
-                    <ItemDetail data={product} />
-            }
+                {
+                    loader ? <CircularProgress /> :
+                        <ItemDetail data={product} />
+                }
+            </div>
         </div>
 
     )

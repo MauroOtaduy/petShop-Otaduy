@@ -9,8 +9,9 @@ const Item = ({ data }) => {
     return (
         <div className='list'>
             <div className='item' >
-                <Link to={`/product/${id}`}>
+                <Link to={`/item/${id}`} style={{ textDecoration: 'none' }}>
                     <img src={img} alt='foto producto' />
+
                 </Link>
                 <h2>{name}</h2>
                 <h3>Precio: ${price}</h3>
@@ -19,7 +20,7 @@ const Item = ({ data }) => {
 
 
                 <Button variant="contained">
-                    <Link to={`/product/${id}`}>
+                    <Link to={`/item/${id}`} style={{ textDecoration: 'none' }}>
 
                         Detalles
 

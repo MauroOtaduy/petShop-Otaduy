@@ -12,17 +12,23 @@ export default function NavBar() {
         <AppBar>
 
             <nav>
-                <div className="container-logo">
-                    <img src={logo} alt="Logo del ecommerce" />
-                    <h2 className="brand">PetHouse</h2>
-                </div>
+                <Link to={'/'} style={{ textDecoration: 'none' }}>
+                    <div className="container-logo">
+
+                        <img src={logo} alt="Logo del ecommerce" />
+                        <h2 className="brand">PetHouse</h2>
+
+                    </div>
+                </Link>
                 <div className="cart-container">
                     <ul>
                         <li>
                             <Button variant="contained">Home</Button>
                         </li>
                         <li>
-                            <Button variant="contained">Products</Button>
+                            <Link to={'/categories'} style={{ textDecoration: 'none' }}>
+                                <Button variant="contained">Category</Button>
+                            </Link>
                         </li>
                         <li>
                             <Button variant="contained">Contact</Button>
