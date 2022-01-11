@@ -1,11 +1,10 @@
 import { CircularProgress } from "@mui/material"
 import { useEffect, useState } from "react"
-import torre2 from '../../../src/assets/images/torre2.jpg';
 import ItemDetail from '../ItemDetail/ItemDetail'
-import cucha from '../../../src/assets/images/cucha.jpg';
-import pechera from '../../../src/assets/images/pechera.jpg';
-import torre from '../../../src/assets/images/torre.jpg';
 import { useParams } from "react-router";
+import db from '../../firebase'
+import { doc, getDoc } from 'firebase/firestore';
+
 
 
 const ItemDetailContainer = () => {
@@ -13,66 +12,22 @@ const ItemDetailContainer = () => {
     const [loader, setLoader] = useState(true)
     const [product, setProduct] = useState([])
 
-    const dataProduct = [
-        {
-            id: 1,
-            name: 'Cucha pequeña',
-            price: 2000,
-            stock: 10,
-            img: cucha,
-            initial: 0,
-            description: 'Cucha pequeña, en tela impermeable y antidesgarro, rellena de goma espuma'
-        },
-        {
-            id: 2,
-            name: 'Torre de felpa',
-            price: 2000,
-            stock: 10,
-            img: torre,
-            initial: 0,
-            description: 'Torre de felpa de 50cm de alto, muy resistente y estética'
-        },
-        {
-            id: 3,
-            name: 'Torre Anillo felpa',
-            price: 2000,
-            stock: 10,
-            img: torre2,
-            initial: 0,
-            description: 'Torre de felpa de 80cm de alto, muy resistente y estética'
-        },
-        {
-            id: 4,
-            name: 'Pechera Mediana',
-            price: 2000,
-            stock: 10,
-            img: pechera,
-            initial: 0,
-            description: 'Pechera para perros de hasta 30kg'
-
-        }
-    ]
-
-    const getProduct = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(dataProduct)
-        }, 2000)
-    })
-
-    useEffect(() => {
-        getProduct.then((data) => {
-            data.filter(data => {
-                if (data.id === parseInt(id)) {
-                    setProduct(data)
-                    console.log(data)
-                }
-            })
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    async function getProduct(db) {
+        const docRef = doc(db, "productos", id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            let producto = docSnap.data();
+            producto.id = docSnap.id
+            setProduct(producto)
             setLoader(false)
-
-        })
-
-    })
+        } else {
+            console.log("No such document!");
+        }
+    }
+    useEffect(() => {
+        getProduct(db)
+    }, [id])
     return (
         <div className='itemDetail-container'>
             <h2>Detalles del producto</h2>

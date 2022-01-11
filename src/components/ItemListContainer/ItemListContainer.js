@@ -1,72 +1,54 @@
 
 import './ItemListContainer.css';
 import { CircularProgress, Grid } from "@mui/material"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from 'react'
 import Item from "../Item/Item"
-import cucha from '../../../src/assets/images/cucha.jpg';
-import pechera from '../../../src/assets/images/pechera.jpg';
-import torre from '../../../src/assets/images/torre.jpg';
-import torre2 from '../../../src/assets/images/torre2.jpg';
+import db from '../../firebase'
+import { collection, getDocs } from 'firebase/firestore';
+import { useParams } from 'react-router-dom'
 
-const ItemListContainer = () => {
+const ItemListContainer = ({ title }) => {
     const [loader, setLoader] = useState(true)
     const [products, setProducts] = useState([])
+    const { category } = useParams()
 
-    const productsList = [
-        {
-            id: 1,
-            name: 'Cucha pequeña',
-            price: 2000,
-            stock: 10,
-            img: cucha,
-            initial: 0
+    async function getProducts(db) {
 
-        },
-        {
-            id: 2,
-            name: 'Torre de felpa',
-            price: 2000,
-            stock: 10,
-            img: torre,
-            initial: 0
+        const productosCol = collection(db, 'productos');
+        const productosSnapshot = await getDocs(productosCol);
+        const productosList = productosSnapshot.docs.map(doc => {
+            let producto = doc.data()
+            producto.id = doc.id
+            return producto
+        });
+        return productosList;
 
-        },
-        {
-            id: 3,
-            name: 'Torre Anillo felpa',
-            price: 2000,
-            stock: 10,
-            img: torre2,
-            initial: 0
-
-        },
-        {
-            id: 4,
-            name: 'Pechera Mediana',
-            price: 2000,
-            stock: 10,
-            img: pechera,
-            initial: 0
-
-
-        }
-    ]
-
-    const getProductsList = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(productsList)
-        }, 2000)
-    })
+    }
 
     useEffect(() => {
-        getProductsList.then((data) => {
-            setProducts(data)
-            setLoader(false)
+        getProducts(db).then((resultsProducts) => {
+            if (category) {
+                console.log(resultsProducts)
+                resultsProducts.filter(resultProduct => {
+                    if (resultProduct.category === category) {
+                        console.log('La categoria es: ', category)
+                        setProducts(products => [...products, resultProduct])
+                        setLoader(false)
+                    }
+                })
+            }
+            else {
+                setProducts(resultsProducts)
+                setLoader(false)
+            }
         })
-    })
+    }, [])
+
     return (
         <div className='list-container'>
             <h2>Productos Destacados</h2>
+            <h2>{category ? category : title}</h2>
+
 
             <div className='item-container'>
                 {

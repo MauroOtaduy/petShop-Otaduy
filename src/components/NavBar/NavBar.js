@@ -23,11 +23,13 @@ export default function NavBar() {
                 <div className="cart-container">
                     <ul>
                         <li>
-                            <Button variant="contained">Home</Button>
+                            <Link to={'/'} style={{ textDecoration: 'none' }}>
+                                <Button variant="contained">Home</Button>
+                            </Link>
                         </li>
                         <li>
-                            <Link to={'/categories'} style={{ textDecoration: 'none' }}>
-                                <Button variant="contained">Category</Button>
+                            <Link to={'/'} style={{ textDecoration: 'none' }}>
+                                <Button variant="contained">Products</Button>
                             </Link>
                         </li>
                         <li>
