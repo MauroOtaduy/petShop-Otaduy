@@ -1,0 +1,23 @@
+.container-cart-page {
+  margin-top: 110px;
+}
+
+.grid-total-price {
+  display: flex;
+  align-content: center;
+  width: max-content;
+}
+
+.final-table {
+}
+
+.final-table-total {
+  display: flex;
+  margin-right: 70px;
+  justify-content: right;
+}
+
+.container-cart-page img {
+  width: 80px;
+  padding: 5px 0px;
+}

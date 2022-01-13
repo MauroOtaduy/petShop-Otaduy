@@ -24,7 +24,9 @@ const Item = ({ data }) => {
 
     const sendItem = () => {
         console.log("itemCart: ", products)
-        addProducts(itemCart)
+        if (itemCart.quantity !== 0) {
+            addProducts(itemCart)
+        }
     }
     return (
         <div className='list'>

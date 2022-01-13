@@ -3,7 +3,7 @@ import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import NavBar from '../NavBar/NavBar';
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from '../../Context/CartContext'
-
+import CartPage from "../../CartPage/CartPage";
 
 export default function AppRouter() {
 
@@ -16,6 +16,7 @@ export default function AppRouter() {
                     <Routes>
                         <Route path='/products/:id' element={<ItemDetailContainer />} />
                         <Route path='/:category/' element={<ItemListContainer />} />
+                        <Route path='/cart' element={<CartPage />} />
                         <Route path='/' element={<ItemListContainer />} />
                     </Routes>
                 </CartProvider>
