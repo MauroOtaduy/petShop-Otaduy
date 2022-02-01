@@ -1,11 +1,11 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { useState, useContext } from 'react'
-import { ThemeProvider } from '@mui/material/styles';
+import Container from '@mui/material/Container';
 import CartContext from '../../Context/CartContext';
-
-
+import { Button } from "@mui/material";
 export default function ItemDetail({ data }) {
+
     const { addProducts, products } = useContext(CartContext)
     const [itemCart, setItemCart] = useState(
         {
@@ -17,33 +17,32 @@ export default function ItemDetail({ data }) {
         }
     )
     const onAdd = (value) => {
-
-        itemCart.quantity = value
-
+        console.log("1-itemcart de itemdetal: ", itemCart.quantity)
+        itemCart.quantity = value + 1
     }
 
     const sendItem = () => {
         console.log("itemCart: ", products)
-        addProducts(itemCart)
+        if (itemCart.quantity !== 0) {
+            addProducts(itemCart)
+        }
     }
     return (
-        <div className='list-item-detail'>
-            <ThemeProvider >
 
+        <Container >
+            <div className='list-item-detail'>
                 <img className="item-detail-img" src={`../assets/${data.img}`} alt='foto producto' />
                 <div className="item-detail-texto">
                     <h2>{data.name}</h2>
                     <h3>Precio: ${data.price}</h3>
                     <p>Stock: {data.stock}</p>
                     <ItemCount stock={data.stock} onAdd={onAdd} />
-                    <button onClick={sendItem}>
-                        Comprar
-                    </button>
+                    <Button className='list-detail-button' variant="outlined" onClick={sendItem}>Agregar al carrito</Button>
                 </div>
 
+            </div>
+        </Container>
 
-            </ThemeProvider>
-        </div >
     )
 
 

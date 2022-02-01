@@ -1,42 +1,93 @@
-.cart-container svg {
-  color: black;
-  width: 30px;
-}
-
 .box-cart * {
   color: black;
 }
 
 .box-cart {
+  width: 400px;
   max-height: 500px;
   overflow-y: auto;
 }
 .img-cart {
-  width: 80px;
+  width: 100px;
   padding: 5px 0px;
 }
 
 .img-cart img {
-  width: 100%;
+  width: auto;
 }
-.box-cart .list-cart {
+.list-cart {
+  font-family: "Oswald", sans-serif;
   display: flex;
   justify-content: space-between;
   padding: 0px 10px;
   align-items: center;
   border-bottom: 1px solid rgb(206, 202, 202);
-}
-.box-cart {
-  position: absolute;
-  z-index: 1;
-  width: 400px;
-  height: auto;
-  background: white;
-  right: 20px;
-  top: 90px;
-  padding: 10px 0px;
   box-sizing: border-box;
+  border-right: 10px;
   border-radius: 5px;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
     0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  width: 300px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.cart-total {
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+.logo-cart {
+  color: black !important;
+  margin: 0 10px !important;
+}
+
+.logo-cart:hover {
+  cursor: pointer !important;
+  color: rgb(17, 168, 148) !important;
+}
+
+.cart-widget-item {
+  padding: 0% !important;
+  background-color: transparent !important;
+  cursor: auto !important;
+}
+.cart-widget-item h2 {
+  font-size: 20px;
+  padding: 8px 20px;
+}
+
+.cart-content {
+  padding: 0%;
+}
+.cart-content h3 {
+  margin: 0%;
+  padding: 3px;
+  text-align: center;
+  background: rgb(17, 168, 148);
+  color: white;
+}
+.cart-action p {
+  padding: 10px 30px;
+  text-align: end;
+}
+.cart-action-button {
+  padding: 2px 8px !important;
+  margin: 3px 5px !important;
+  color: rgb(235, 149, 51) !important;
+  border-color: rgb(235, 149, 51) !important;
+}
+
+.cart-action-button:hover {
+  color: white !important;
+  background: rgb(235, 149, 51) !important;
+}
+
+#clear-button {
+  color: red !important;
+  border-color: red !important;
 }

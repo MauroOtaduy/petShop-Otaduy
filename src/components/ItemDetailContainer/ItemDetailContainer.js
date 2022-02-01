@@ -4,15 +4,14 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from "react-router";
 import db from '../../firebase'
 import { doc, getDoc } from 'firebase/firestore';
-
-
+import './ItemDetailContainer.css';
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
     const [loader, setLoader] = useState(true)
     const [product, setProduct] = useState([])
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
     async function getProduct(db) {
         const docRef = doc(db, "productos", id);
         const docSnap = await getDoc(docRef);
@@ -30,7 +29,7 @@ const ItemDetailContainer = () => {
     }, [id])
     return (
         <div className='itemDetail-container'>
-            <h2>Detalles del producto</h2>
+            <h2 id="ItemDetail-title">Detalles del producto</h2>
             <div className='detail-container'>
 
                 {

@@ -10,6 +10,7 @@
   border-radius: 5px;
 }
 .text-count {
+  font-family: "Oswald", sans-serif;
   text-align: center;
   width: 30px;
   font-size: medium;
@@ -28,4 +29,5 @@
 }
 #item-count {
   width: 30px;
+  margin: auto 5px;
 }

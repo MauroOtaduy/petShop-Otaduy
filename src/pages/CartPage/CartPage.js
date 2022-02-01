@@ -1,11 +1,8 @@
 import React, { useContext, useState } from 'react'
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import CartContext from '../Context/CartContext';
-import ContactData from '../components/ContactData/ContactData';
+import CartContext from '../../Context/CartContext';
+import ContactData from '../../components/ContactData/ContactData';
 import './CartPage.css'
-
-
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -29,14 +26,15 @@ export default function CartPage() {
 
     return (
         <>
+            <h2 id="order-title"> Resumen de pedido </h2>
             <Container className='container-cart-page'>
 
                 <ContactData open={open} handleClose={handleClose} products={products} total={totalPrice} />
                 <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table" align="center">
+                    <Table size="small" aria-label="a dense table" align="center">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="center"><h3>Imagen</h3></TableCell>
+                                <TableCell align="center" sx={{ display: { xs: 'none', md: 'block' } }}><h3>Imagen</h3></TableCell>
                                 <TableCell align="center"><h3>Producto</h3></TableCell>
                                 <TableCell align="center"><h3>Cantidad</h3></TableCell>
                                 <TableCell align="center"><h3>Precio</h3></TableCell>
@@ -50,7 +48,7 @@ export default function CartPage() {
                                 >
 
 
-                                    <TableCell align="center"><img src={`../assets/${product.img}`} alt="img" /></TableCell>
+                                    <TableCell align="center" sx={{ display: { xs: 'none', md: 'block' } }}><img src={`../assets/${product.img}`} alt="img" /></TableCell>
                                     <TableCell align="center">{product.name}</TableCell>
                                     <TableCell align="center">{product.quantity}</TableCell>
                                     <TableCell align="center">{product.price}</TableCell>
@@ -64,9 +62,9 @@ export default function CartPage() {
                 <div className='final-table'>
                     <div className='final-table-total'>
                         <h3>Total: </h3>
-                        <h3>$ {totalPrice}</h3>
+                        <h3> $ {totalPrice}</h3>
                     </div>
-                    <Button variant="contained" onClick={handleClickOpen} className='button-cart-page'>Comprar</Button>
+                    <button onClick={handleClickOpen} id='button-cart-page'>Comprar</button>
                 </div>
             </Container>
 

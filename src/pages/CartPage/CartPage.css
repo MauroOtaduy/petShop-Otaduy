@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Montserrat&family=Oswald:wght@300;400&display=swap");
+
+.container-cart-page {
+  margin-top: 50px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.grid-total-price {
+  display: flex;
+  align-content: center;
+  width: max-content;
+}
+
+.final-table {
+}
+
+.final-table-total {
+  display: flex;
+  margin-right: 70px;
+  justify-content: right;
+}
+
+.container-cart-page img {
+  width: 80px;
+  padding: 5px 0px;
+}
+#button-cart-page {
+  background: none;
+  border: 1px solid rgb(235, 149, 51);
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: rgb(235, 149, 51);
+  font-size: 18px;
+  margin: 50px;
+}
+#button-cart-page:hover {
+  color: white;
+  background: rgb(235, 149, 51);
+  cursor: pointer;
+}
+
+#order-title {
+  font-size: 35px;
+  margin-top: 90px;
+  padding: 20px;
+  color: rgb(17, 168, 148);
+  background: linear-gradient(to right, black, rgb(17, 168, 148));
+}

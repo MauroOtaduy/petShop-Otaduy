@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { useContext } from 'react'
 import CartContext from '../../Context/CartContext';
 
+
 const Item = ({ data }) => {
     const { name, price, stock, img, id } = data
     const { addProducts, products } = useContext(CartContext)
@@ -19,7 +20,7 @@ const Item = ({ data }) => {
         }
     )
     const onAdd = (value) => {
-        itemCart.quantity = value
+        itemCart.quantity = value + 1
     }
 
     const sendItem = () => {
@@ -39,10 +40,10 @@ const Item = ({ data }) => {
                 <p>Stock: {stock}</p>
             </div>
             <ItemCount stock={stock} onAdd={onAdd} />
-            <Button variant="contained" color="background" style={{ marginBottom: 10, textDecoration: 'none' }}>
-                <Link to={`/products/${id}`} style={{ textDecoration: 'none' }}>Ver Detalle</Link>
-            </Button>
-            <Button variant="contained" color="background" onClick={sendItem}>Agregar al carrito</Button>
+            <Link to={`/products/${id}`} style={{ textDecoration: 'none' }}>
+                <Button className='detail-button' variant="text" > Ver detalles</Button>
+            </Link>
+            <Button className='add-button-cart' variant="text" onClick={sendItem}>Agregar al carrito</Button>
 
         </div >
     )

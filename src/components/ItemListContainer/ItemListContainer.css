@@ -1,19 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Montserrat&family=Oswald:wght@300;400&display=swap");
+
 .list-container {
-  margin-top: 110px;
+  margin-top: 20px;
   font-family: "Oswald", sans-serif;
-}
-.list-container h2 {
-  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .item-container {
-  margin-top: 30px;
+  margin: auto;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
 }
-
+.items-prod {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .item-position {
   border: solid rgb(161, 161, 211) 2px;
   padding: 10px;
   border-radius: 10%;
+}
+
+.list-container-title {
+  font-size: 30px;
+  margin-top: 70px;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(17, 168, 148);
+  background: linear-gradient(to right, black, rgb(17, 168, 148));
 }

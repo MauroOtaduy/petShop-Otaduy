@@ -1,22 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Montserrat&family=Oswald:wght@300;400&display=swap");
 img {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
 }
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 25px;
-  background: white;
+  padding: 5px 25px;
 }
 
 .container-logo {
-  width: 150px;
   padding-left: 2px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .container-logo img {
@@ -34,16 +31,138 @@ nav ul li {
 }
 
 .brand {
-  font-family: "Cookie", Times, serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  color: black;
-  font-size: 40px;
+  font-size: 35px;
+  padding-top: 8px;
   padding-left: 10px;
   margin-top: 0;
   margin-bottom: 0;
+  background: linear-gradient(to right, black, rgb(17, 168, 148));
+  background-clip: text;
+  color: transparent;
 }
-.cart-container {
+.menu {
   display: flex;
   align-items: center;
   margin-left: 10px;
+}
+.logo-cart {
+  color: black;
+  margin: 0 10px;
+}
+
+.logo-cart:hover {
+  cursor: pointer !important;
+  color: rgb(17, 168, 148);
+}
+.nav-button {
+  background: none;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 18px !important;
+  color: rgb(17, 168, 148) !important;
+  font-weight: 600 !important;
+  background-image: linear-gradient(currentColor, currentColor) !important;
+  background-position: 0% 100% !important;
+  background-repeat: no-repeat !important;
+  background-size: 0% 2px !important;
+  transition: background-size 0.3s !important;
+  text-transform: none !important;
+}
+
+.nav-button:hover {
+  background-color: transparent !important;
+  background-size: 100% 2px !important;
+  background-image: linear-gradient(
+    90deg,
+    black 0%,
+    rgb(17, 168, 148) 50%,
+    rgb(17, 168, 148) 100%
+  ) !important;
+}
+
+.menu-items-nav {
+  background: none;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 18px !important;
+  color: rgb(17, 168, 148) !important;
+  font-weight: 500 !important;
+  background-image: linear-gradient(currentColor, currentColor) !important;
+  background-position: 0% 100% !important;
+  background-repeat: no-repeat !important;
+  background-size: 0% 1px !important;
+  transition: background-size 0.3s !important;
+  text-transform: none !important;
+}
+
+.menu-items-nav:hover {
+  background-color: transparent !important;
+  background-size: 100% 1px !important;
+  background-image: linear-gradient(
+    90deg,
+    black 0%,
+    rgb(17, 168, 148) 50%,
+    rgb(17, 168, 148) 100%
+  ) !important;
+}
+.nav-button:focus {
+  background-color: transparent !important;
+  background-size: 100% 2px !important;
+  background-image: linear-gradient(
+    90deg,
+    black 0%,
+    rgb(17, 168, 148) 50%,
+    rgb(17, 168, 148) 100%
+  ) !important;
+}
+
+#listIcon {
+  color: black;
+  font-size: 30px;
+}
+
+#nav-respon label {
+  display: none;
+  width: 28px;
+  height: 28px;
+  padding: 10px;
+  font-size: 25px;
+  text-align: center;
+  position: relative;
+  right: 0px;
+}
+
+#menu-button {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  #nav-respon label {
+    display: block;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 40%;
+    background: white;
+    box-shadow: 0px 10px 10px rgb(182, 181, 181);
+    border-bottom-left-radius: 15px;
+  }
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  #menu-button:checked ~ .menu {
+    display: block;
+  }
+  .brand {
+    font-size: 28px;
+  }
+  img {
+    height: 35px;
+    width: 35px;
+  }
 }

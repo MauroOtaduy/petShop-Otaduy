@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Montserrat&family=Oswald:wght@300;400&display=swap");
+
+.contact {
+  margin-top: 90px;
+  margin-bottom: 100px;
+  font-family: "Montserrat", sans-serif;
+}
+.contact h2 {
+  font-size: 30px;
+  margin-top: 70px;
+  padding: 20px;
+  color: rgb(17, 168, 148);
+  background: linear-gradient(to right, black, rgb(17, 168, 148));
+}
+
+.contact h4 {
+  padding: 5px 20px;
+}
+#send-button {
+  background: none;
+  border: 1px solid rgb(235, 149, 51);
+  border-radius: 4px;
+  margin: 15px 20%;
+
+  padding: 5px 10px;
+  color: rgb(235, 149, 51);
+  font-size: 18px;
+}
+#send-button:hover {
+  color: white;
+  background: rgb(235, 149, 51);
+  cursor: pointer;
+}

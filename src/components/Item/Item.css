@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap");
 
 .list {
-  width: 240px;
+  width: 260px;
   border: solid 1px rgb(221, 218, 218);
   border-radius: 10px;
   margin: 10px;
@@ -19,7 +19,38 @@
   font-weight: 400;
   font-size: 30px;
   color: rgb(5, 62, 71);
+  margin-top: 15px;
 }
 .item p {
   color: rgb(153, 152, 152);
+}
+
+.detail-button {
+  font-size: 18px !important;
+  text-transform: none !important;
+  background: transparent !important;
+  padding: 2px 8px !important;
+  margin: 5px 5px !important;
+  color: rgb(235, 149, 51) !important;
+}
+
+.detail-button:hover {
+  color: white !important;
+  background: rgb(235, 149, 51) !important;
+}
+.add-button-cart {
+  text-decoration: none !important;
+  font-size: 16px !important;
+  background: transparent !important;
+  padding: 2px 8px !important;
+  margin: 5px 5px !important;
+  color: rgb(5, 62, 71) !important;
+  border: 1px solid rgb(5, 62, 71) !important;
+  font-weight: 500 !important;
+}
+
+.add-button-cart:hover {
+  color: white !important;
+  border: 1px solid rgb(5, 62, 71) !important;
+  background: rgb(5, 62, 71) !important;
 }

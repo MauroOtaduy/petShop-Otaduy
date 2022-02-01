@@ -1,15 +1,16 @@
-.finish-order {
+#end-transaction {
   background: none;
   border: 1px solid rgb(235, 149, 51);
   border-radius: 4px;
-
+  margin-right: 10px;
+  margin-bottom: 10px;
   padding: 5px 10px;
   color: rgb(235, 149, 51);
   font-size: 18px;
   display: flex;
   justify-content: end;
 }
-.finish-order:hover {
+#end-transaction:hover {
   color: white;
   background: rgb(235, 149, 51);
   cursor: pointer;

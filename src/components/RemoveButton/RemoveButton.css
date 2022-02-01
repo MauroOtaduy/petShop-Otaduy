@@ -1,0 +1,7 @@
+.remove-button {
+  margin: auto !important;
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin-left: 10px !important;
+}

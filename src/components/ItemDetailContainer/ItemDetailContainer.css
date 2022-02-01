@@ -2,11 +2,15 @@
   margin-top: 110px;
   font-family: "Oswald", sans-serif;
 }
-.itemDetail-container h2 {
+#ItemDetail-title {
   font-size: 35px;
+  margin-top: 70px;
+  padding: 20px;
+  color: rgb(17, 168, 148);
+  background: linear-gradient(to right, black, rgb(17, 168, 148));
 }
+
 .detail-container {
-  margin-top: 30px;
   display: flex;
   justify-content: center;
 }
